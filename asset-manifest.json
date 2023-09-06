@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Money-Split-demo-app/static/css/main.7139d6f1.css",
+    "main.js": "/Money-Split-demo-app/static/js/main.ff069e1a.js",
+    "index.html": "/Money-Split-demo-app/index.html",
+    "main.7139d6f1.css.map": "/Money-Split-demo-app/static/css/main.7139d6f1.css.map",
+    "main.ff069e1a.js.map": "/Money-Split-demo-app/static/js/main.ff069e1a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7139d6f1.css",
+    "static/js/main.ff069e1a.js"
+  ]
+}
