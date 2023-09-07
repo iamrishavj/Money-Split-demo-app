@@ -28,7 +28,6 @@ export default function EatNSplit({ initialFriends }) {
     setSelectedId(null);
   }
 
-  console.log(friends.filter((f) => f.id === selectedId));
   return (
     <div className="app">
       <div className="sidebar">
@@ -45,12 +44,9 @@ export default function EatNSplit({ initialFriends }) {
       {selectedId !== null && (
         <div className="splitscreen">
           <SplitPayment
-            friend={
-              selectedId !== null
-                ? friends.find((f) => f.id === selectedId)
-                : null
-            }
+            friend={friends.find((f) => f.id === selectedId)}
             onPayment={handlePayments}
+            key={selectedId}
           />
           <button className="close-button" onClick={() => setSelectedId(null)}>
             X
