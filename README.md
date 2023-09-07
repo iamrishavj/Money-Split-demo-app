@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Money-Split Demo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Demo
 
-## Available Scripts
+Check out the live demo [here](https://iamrishavj.github.io/Money-Split-demo-app/).
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+This demo app allows you to manage money splits among a group of friends. Built with React, the application utilizes React hooks (`useState`) for state management.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- List of friends with balances
+- Add new friends
+- Select a friend for bill splitting
+- Specify bill amount and expenses by each person
+- Mark who is paying the bill (User or friend)
 
-### `npm test`
+## How to Run
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Install Node.js and npm if you haven't already.
+2. Clone the repository.
+3. Navigate to the project folder in the terminal.
+4. Run `npm install` to install dependencies.
+5. Run `npm start` to start the application.
 
-### `npm run build`
+#### State variables:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `friends`: List of friends with their balances
+- `showAddFriend`: Boolean to control the "Add Friend" form visibility
+- `selectedFriend`: The friend object that is currently selected
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Functions:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `handleShowAddFriend()`: Toggles the visibility of the "Add Friend" form
+- `handleAddFriend(friend)`: Adds a new friend to the list
+- `handleSelection(friend)`: Sets the `selectedFriend` state variable
+- `handleSplitBill(value)`: Updates the balance for a friend
 
-### `npm run eject`
+### `FriendsList()`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Displays the list of friends.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `Friend()`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Displays a single friend, including their balance and selection button.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `FormAddFriend()`
 
-## Learn More
+A form to add new friends. Uses `useState` for form fields.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Functions:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `handleSubmit(e)`: Handles form submission and updates the `friends` state in `App`.
 
-### Code Splitting
+### `FormSplitBill()`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+A form for bill splitting functionalities.
 
-### Analyzing the Bundle Size
+#### State variables:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `bill`: The total amount of the bill
+- `paidByUser`: Amount paid by the user
+- `paidByFriend`: Amount paid by the friend, calculated as `bill - paidByUser`
+- `whoIsPaying`: Who is paying the bill ("user" or "friend")
 
-### Making a Progressive Web App
+#### Functions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- `handleSubmit(e)`: Handles form submission and updates the `friends` state in `App` with the new balance.
 
-### Advanced Configuration
+## Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- React
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Adding a "Live Demo" section near the top of your README ensures that it gets attention, making it easier for users to experience your project without having to clone the repo and run it locally.
